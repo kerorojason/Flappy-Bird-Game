@@ -14,26 +14,28 @@ let pipeWidth, pipeHeight, pipeChannel;
 let numWidth;
 
 let state = {};
-
+const urlPrefix = 'https://raw.githubusercontent.com/kerorojason/Flappy-Bird-Game/master/';
 function preload() {
   assets.birdColorArr = ['blue', 'red', 'yellow'].map(color =>
     ['upflap', 'midflap', 'downflap'].map(flap =>
-      loadImage(`assets/sprites/${color}bird-${flap}.png`)
+      loadImage(`${urlPrefix}assets/sprites/${color}bird-${flap}.png`)
     )
   );
-  assets.bgArr = ['day', 'night'].map(time => loadImage(`assets/sprites/background-${time}.png`));
-  ['base', 'gameover', 'message'].forEach(
-    item => (assets[`${item}Img`] = loadImage(`assets/sprites/${item}.png`))
+  assets.bgArr = ['day', 'night'].map(time =>
+    loadImage(`${urlPrefix}assets/sprites/background-${time}.png`)
   );
-  assets.lowerPipeImg = loadImage(`assets/sprites/pipe-green-lower.png`);
-  assets.upperPipeImg = loadImage(`assets/sprites/pipe-green-upper.png`);
+  ['base', 'gameover', 'message'].forEach(
+    item => (assets[`${item}Img`] = loadImage(`${urlPrefix}assets/sprites/${item}.png`))
+  );
+  assets.lowerPipeImg = loadImage(`${urlPrefix}assets/sprites/pipe-green-lower.png`);
+  assets.upperPipeImg = loadImage(`${urlPrefix}assets/sprites/pipe-green-upper.png`);
 
   assets.soundArr = ['die', 'hit', 'point', 'swoosh', 'wing'].forEach(
-    item => (assets[item] = loadSound(`assets/audio/${item}.wav`))
+    item => (assets[item] = loadSound(`${urlPrefix}assets/audio/${item}.wav`))
   );
   assets.numArr = [];
   for (let i = 0; i < 10; i++) {
-    assets.numArr.push(loadImage(`assets/sprites/${i}.png`));
+    assets.numArr.push(loadImage(`${urlPrefix}assets/sprites/${i}.png`));
   }
 }
 
