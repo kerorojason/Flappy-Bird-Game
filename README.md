@@ -1,5 +1,10 @@
 ## Flappy Bird Game
 
+### Github page <a href="https://kerorojason.github.io/Flappy-Bird-Game/">demo link</a>
+
+### Demo gif
+![](https://i.imgur.com/6M5QMhw.gif)
+
 ### Requirements
 
 - python (basic CORS server)
@@ -21,5 +26,4 @@
 - Let users enter name before playing.
 - Record 5 highest scores and player names in a database and display on the main screen.
 
-### Demo
-![](https://i.imgur.com/6M5QMhw.gif)
+
